@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect | Farmer Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+    <div id="site-header"></div>
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col space-y-2 pointer-events-none no-print"></div>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-8 w-full">
+        <div class="flex justify-between items-center mb-8 pb-4 border-b">
+            <div>
+                <span class="bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded text-xs font-bold">FARMER PORTAL</span>
+                <h1 class="text-2xl font-extrabold mt-1">Your Farm Produce Listings</h1>
+            </div>
+            <button onclick="openProduceModal()" class="bg-green-700 hover:bg-green-800 text-white font-bold text-xs px-4 py-2.5 rounded-xl">List New Harvest</button>
+        </div>
+        <div id="farmer-pending-warning" class="hidden bg-amber-50 border-l-4 border-amber-500 p-4 rounded-xl mb-6 text-xs text-amber-900">
+            Account pending admin verification.
+        </div>
+        <div class="bg-white rounded-2xl border overflow-hidden shadow-sm">
+            <table class="w-full text-left text-xs text-slate-600">
+                <thead class="bg-slate-100 uppercase">
+                    <tr><th class="p-4">Produce</th><th class="p-4">Category</th><th class="p-4">Price</th><th class="p-4">Stock</th><th class="p-4">Status</th><th class="p-4 text-right">Actions</th></tr>
+                </thead>
+                <tbody id="farmer-produce-tbody"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Produce Modal -->
+    <div id="produce-modal" class="hidden fixed inset-0 bg-slate-900/70 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-xl">
+            <h2 class="text-lg font-bold mb-4" id="modal-title">List Produce</h2>
+            <form onsubmit="handleSaveProduce(event)" class="space-y-3">
+                <input type="hidden" id="modal-produce-id">
+                <input type="text" id="modal-name" required placeholder="Produce Name" class="w-full text-xs p-2.5 border rounded-lg">
+                <select id="modal-category" class="w-full text-xs p-2.5 border rounded-lg">
+                    <option value="Vegetables">Vegetables</option><option value="Fruits">Fruits</option><option value="Grains">Grains</option><option value="Tubers">Tubers</option><option value="Dairy">Dairy</option>
+                </select>
+                <div class="grid grid-cols-2 gap-2">
+                    <input type="number" id="modal-price" required placeholder="Price" class="w-full text-xs p-2.5 border rounded-lg">
+                    <input type="number" id="modal-stock" required placeholder="Stock" class="w-full text-xs p-2.5 border rounded-lg">
+                </div>
+                <input type="text" id="modal-unit" required placeholder="Unit (e.g. Kg)" class="w-full text-xs p-2.5 border rounded-lg">
+                <input type="text" id="modal-location" required placeholder="Location" class="w-full text-xs p-2.5 border rounded-lg">
+                <input type="url" id="modal-image" placeholder="Image URL" class="w-full text-xs p-2.5 border rounded-lg">
+                <textarea id="modal-desc" placeholder="Description" class="w-full text-xs p-2.5 border rounded-lg"></textarea>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" onclick="closeProduceModal()" class="px-4 py-2 text-xs">Cancel</button>
+                    <button type="submit" class="px-4 py-2 text-xs bg-green-700 text-white rounded-lg">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="site-footer"></div>
+    <script src="js/api.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
