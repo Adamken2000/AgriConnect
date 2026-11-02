@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+    <!-- Navbar placeholder/injected by header.js -->
+    <div id="site-header"></div>
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col space-y-2 pointer-events-none no-print"></div>
+
+    <main class="flex-grow">
+        <div class="relative bg-gradient-to-r from-emerald-900 via-green-800 to-teal-900 text-white py-16 md:py-24 px-4 overflow-hidden">
+            <div class="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3 py-1 rounded-full text-xs font-semibold uppercase">Direct Farm-to-Buyer Marketplace</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">Direct Wholesale Farm Produce Connecting Kenya</h1>
+                    <p class="text-slate-200 text-lg">Welcome, <span id="hero-user-display-name" class="font-bold text-amber-400">Guest</span>! Buy fresh produce direct from verified Kenyan farmers.</p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="catalogue.html" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-6 py-3 rounded-xl shadow-lg transition flex items-center space-x-2">
+                            <i class="fa-solid fa-basket-shopping"></i><span>Browse Catalogue</span>
+                        </a>
+                        <a href="auth.html" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl border border-white/20 transition flex items-center space-x-2">
+                            <i class="fa-solid fa-gauge"></i><span>Get Started</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/10 backdrop-blur p-6 rounded-2xl border border-white/10">
+                        <div class="text-amber-400 text-3xl font-extrabold mb-1" id="stat-active-produce">0</div>
+                        <div class="text-xs text-slate-300 font-medium uppercase">Approved Harvests</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur p-6 rounded-2xl border border-white/10">
+                        <div class="text-emerald-400 text-3xl font-extrabold mb-1" id="stat-traded-volume">0 Units</div>
+                        <div class="text-xs text-slate-300 font-medium uppercase">Available Stock</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur p-6 rounded-2xl border border-white/10">
+                        <div class="text-cyan-400 text-3xl font-extrabold mb-1" id="stat-total-orders">0</div>
+                        <div class="text-xs text-slate-300 font-medium uppercase">Total Orders</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur p-6 rounded-2xl border border-white/10">
+                        <div class="text-purple-300 text-3xl font-extrabold mb-1" id="stat-total-farmers">0</div>
+                        <div class="text-xs text-slate-300 font-medium uppercase">Farmers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900">Featured Categories</h2>
+                    <p class="text-sm text-slate-500">Explore fresh farm produce categories</p>
+                </div>
+                <a href="catalogue.html" class="text-green-700 font-semibold text-sm hover:underline">View All &rarr;</a>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4" id="home-categories-grid"></div>
+        </div>
+
+        <div class="bg-slate-100 py-12">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex justify-between items-center mb-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900">Approved Fresh Listings</h2>
+                        <p class="text-sm text-slate-500">Directly from Kenyan agricultural counties</p>
+                    </div>
+                    <a href="catalogue.html" class="text-green-700 font-semibold text-sm hover:underline">Full Catalogue &rarr;</a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="home-produce-grid"></div>
+            </div>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="js/api.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
