@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriConnect | About Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+    <div id="site-header"></div>
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col space-y-2 pointer-events-none no-print"></div>
+
+    <main class="flex-grow max-w-5xl mx-auto px-4 py-12 space-y-12">
+        <!-- Hero Intro -->
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+            <span class="text-xs font-bold text-green-700 uppercase tracking-widest bg-green-50 px-3 py-1 rounded-full border border-green-200">Our Mission</span>
+            <h1 class="text-4xl font-extrabold text-slate-900">Empowering Smallholder Farmers Across Kenya</h1>
+            <p class="text-slate-600 text-sm leading-relaxed">AgriConnect eliminates exploitative brokers, establishing direct transparency and fair trade between verified agricultural producers and consumer businesses.</p>
+        </div>
+
+        <!-- Vision & Impact Cards -->
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                <div class="w-10 h-10 bg-green-100 text-green-700 rounded-xl flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">Fair Pricing</h3>
+                <p class="text-xs text-slate-500 leading-relaxed">Farmers set their own harvest prices. Buyers pay transparent market rates without hidden middleman markups bleeding rural incomes.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                <div class="w-10 h-10 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">Order Lifecycle Tracking</h3>
+                <p class="text-xs text-slate-500 leading-relaxed">End-to-end transparency: trace orders seamlessly through every milestone from <strong>Placed</strong> to <strong>Confirmed</strong>, <strong>Dispatched</strong>, and <strong>Delivered</strong>.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">Verified Quality</h3>
+                <p class="text-xs text-slate-500 leading-relaxed">Every farmer account and produce listing undergoes thorough verification by our platform administrators to guarantee top Kenyan quality.</p>
+            </div>
+        </div>
+
+        <!-- Story Section -->
+        <div class="bg-white rounded-3xl border border-slate-200 p-8 md:p-12 shadow-sm grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-slate-900">Transforming Kenyan Agriculture Through Digital Innovation</h2>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Agriculture forms the backbone of Kenya's economy, employing over 70% of the rural population. Yet, smallholder farmers often struggle with post-harvest losses and predatory brokers who leverage logistics gaps.
+                </p>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    AgriConnect bridges this gap using a modern web architecture. By connecting urban markets, restaurants, and retail buyers directly with farmers in regions like Kinangop, Nakuru, Eldoret, and Meru, we ensure sustainable livelihoods and fresher produce for everyone.
+                </p>
+            </div>
+            <div class="bg-green-50 border border-green-200 p-6 rounded-2xl space-y-4">
+                <h3 class="font-bold text-green-900 text-sm">Platform Core Pillars</h3>
+                <ul class="space-y-2 text-xs text-green-800 font-medium">
+                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Direct farm-to-buyer communication</li>
+                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Rigorous admin verification checks</li>
+                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i>M-Pesa and card payment integration readiness</li>
+                    <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Real-time order lifecycle tracking</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="js/api.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
