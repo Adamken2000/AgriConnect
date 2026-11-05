@@ -51,7 +51,7 @@ Ensure you have the following installed on your system:
 Open your terminal or command prompt and clone the project repository:
 
 ```bash
-git clone https://github.com/your-username/AgriConnect.git
+git clone https://github.com/Adamken2000/AgriConnect.git
 cd AgriConnect
 ```
 
@@ -100,8 +100,3 @@ http://localhost:3000
 | **Security Audits** | Review user authentication logs and test input validation defenses. | Monthly | Security Engineer |
 | **Health Monitoring** | Continuously monitor server uptime, API endpoint response times, and error logs. | Continuous | System Administrator |
 
----
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
