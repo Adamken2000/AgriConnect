@@ -74,6 +74,11 @@ const ApiService = {
         });
     },
 
+    // Farmer Count Endpoint (GET)
+    getFarmersCount() {
+        return this._request('/farmers/count', { method: 'GET' });
+    },
+
     // Order Endpoints (GET, POST, PATCH)
     getOrders() {
         return this._request('/orders', { method: 'GET' });
@@ -93,3 +98,4 @@ const ApiService = {
         });
     }
 };
+

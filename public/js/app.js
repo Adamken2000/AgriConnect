@@ -98,6 +98,29 @@ function setElementText(id, text) {
     if (el) el.textContent = text;
 }
 
+async function loadGlobalData() {
+    const remoteProduce = await ApiService.getProduce();
+    if (remoteProduce && Array.isArray(remoteProduce)) {
+        produceData = remoteProduce.map(p => ({
+            ...p,
+            is_approved: Boolean(p.is_approved)
+        }));
+    }
+
+    const remoteOrders = await ApiService.getOrders();
+    if (remoteOrders && Array.isArray(remoteOrders)) {
+        ordersData = remoteOrders;
+    }
+
+    // Fetch and update total farmers count
+    const farmerCountRes = await ApiService.getFarmersCount();
+    if (farmerCountRes && typeof farmerCountRes.count !== 'undefined') {
+        setElementText('stat-total-farmers', farmerCountRes.count);
+    }
+
+    updateGlobalMetrics();
+}
+
 // --- HOME & CATALOGUE ---
 const categoriesData = [
     { name: "Vegetables", icon: "fa-leaf" },

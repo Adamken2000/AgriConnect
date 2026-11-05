@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const db = require('../config/db');
 const authController = require('../controllers/authController');
 const produceController = require('../controllers/produceController');
 const orderController = require('../controllers/orderController');
@@ -21,4 +22,14 @@ router.get('/orders', orderController.getAllOrders);
 router.post('/orders', orderController.createOrder);
 router.patch('/orders/:id/status', orderController.updateOrderStatus);
 
+// Fetch the farmer count from the Node.js backend port 3000
+router.get('/farmers/count', async (req, res) => {
+    try {
+        const [rows] = await db.query("SELECT COUNT(*) AS count FROM users WHERE role = 'farmer'");
+        res.json({ count: rows[0].count });
+    } catch (err) {
+        console.error('Database error fetching farmer count:', err);
+        res.status(500).json({ error: 'Database error' });
+    }
+});
 module.exports = router;
